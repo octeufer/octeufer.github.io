@@ -1,18 +1,412 @@
----
-layout: default
----
+<!DOCTYPE HTML>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
+  <title>Xin Du</title>
+  
+  <meta name="author" content="Xin Du">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link rel="icon" type="image/png" href="images/seal_icon.png">
+</head>
 
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+<!-- <a href="https://ai.google/research">Google Research</a> -->
 
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
+<body>
+  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    <tr style="padding:0px">
+      <td style="padding:0px">
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr style="padding:0px">
+            <td style="padding:2.5%;width:63%;vertical-align:middle">
+              <p style="text-align:center">
+                <name>Xin Du</name>
+              </p>
+              <p>I am a postdoc research associate at the University of Edinburgh, where I work on <a href="https://governance.tas.ac.uk/">Trustworthy of Autonomous System</a> with a focus on Machine Learning.
+              </p>
+              <p>
+                I did my PhD at Eindhoven University of Technology, where I was advised by <a href="https://www.win.tue.nl/~mpechen/">Mykola Pechenizkiy</a> and <a href="http://wwwis.win.tue.nl/~wouter/">Wouter Duivesteijn</a> with a focus on <a href="https://research.tue.nl/en/publications/the-uncertainty-in-exceptional-model-mining">Exceptional Model Mining</a>.
+              </p>
+              <p style="text-align:center">
+                <a href="mailto:x.d.du@hotmail.com">Email</a> &nbsp/&nbsp
+                <a href="data/XinDu.CV.pub.pdf">CV</a> &nbsp/&nbsp
+                <!-- <a href="data/JonBarron-bio.txt">Bio</a> &nbsp/&nbsp -->
+                <a href="https://scholar.google.com/citations?user=GoYZW7cAAAAJ">Google Scholar</a> &nbsp/&nbsp
+                <!-- <a href="https://twitter.com/jon_barron">Twitter</a> &nbsp/&nbsp -->
+                <a href="https://github.com/octeufer">Github</a>&nbsp/&nbsp
+                <a href="https://www.linkedin.com/in/x-d-du/">LinkedIn</a>
+              </p>
+            </td>
+            <td style="padding:2.5%;width:40%;max-width:40%">
+              <a href="images/profile_photo.jpg"><img style="width:100%;max-width:100%" alt="profile photo" src="images/profile_photo.jpg" class="hoverZoomLink"></a>
+            </td>
+          </tr>
+        </tbody></table>
 
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
-</div>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+            <td style="padding:20px;width:100%;vertical-align:middle">
+              <heading>Research</heading>
+              <p>
+                I'm interested in different modeling architestures like Transfomer, Variational Autoencoder, Generative Adversarial Networks and Graph Convolutional Neural Networks. I focus on tackling biases in the data when applying such models considering fairness, robustness and subpopulation shifts.
+              </p>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+          <td style="padding:20px;width:100%;vertical-align:middle">
+            <heading>Projects</heading>
+          </td>
+        </tr>
+      </tbody></table>
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+          
+
+          <tr onmouseout="vitchecklist()" onmouseover="vitchecklist()" >
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <img src='images/framework.png' width="180">
+              </div>
+              <script type="text/javascript">
+                function vitchecklist() {
+                  document.getElementById('vitchecklist_image').style.opacity = "1";
+                }
+
+                function vitchecklist() {
+                  document.getElementById('vitchecklist_image').style.opacity = "0";
+                }
+                vitchecklist()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://github.com/octeufer/VisionChecklist">
+                <papertitle>Vision Checklist: Towards Testable Error Analysis of Image Models to Help System Designers Interrogate Model Capabilities</papertitle>
+              </a>
+              <p>How much can we trust the Transformers and Resnet?</p>
+              <p>This project proposes a set of perturbation operations that can be applied on the underlying data to generate test samples of different types. The perturbations reflect potential changes in operating environments, and interrogate various properties ranging from the strictly quantitative to more qualitative.</p>
+            </td>
+          </tr> 
+
+          <tr onmouseout="RDRE()" onmouseover="RDRE()" >
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <img src='images/exp1full.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function RDRE() {
+                  document.getElementById('RDRE_image').style.opacity = "1";
+                }
+
+                function RDRE() {
+                  document.getElementById('RDRE_image').style.opacity = "0";
+                }
+                RDRE()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://github.com/octeufer/VisionChecklist">
+                <papertitle>Beyond Discriminant Patterns: On the Robustness of Decision Rule Ensembles</papertitle>
+              </a>
+              <p>How much can we trust the rules mined from one dataset when applying to the other?</p>
+              <p>This project proposes discover local decision rules that are robust across different environments.</p>
+            </td>
+          </tr>
+
+          <tr onmouseout="ABCEI()" onmouseover="ABCEI()" >
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <img src='images/ABCEI.png' width="130">
+              </div>
+              <script type="text/javascript">
+                function ABCEI() {
+                  document.getElementById('ABCEI_image').style.opacity = "1";
+                }
+
+                function ABCEI() {
+                  document.getElementById('ABCEI_image').style.opacity = "0";
+                }
+                ABCEI()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://github.com/octeufer/Adversarial-Balancing-based-representation-learning-for-Causal-Effect-Inference">
+                <papertitle>Adversarial Balancing based representation learning for Causal Effect Inference</papertitle>
+              </a>
+              <p>Can we estimate the potential effect before applying a clinical treatment plan, or a policy?</p>
+              <p>This project proposes a deep neural network framework to solve the causal inference problem with observational data. The confounding bias is tackled by applying a Generative Adversarial Netwoks.</p>
+            </td>
+          </tr>
+
+          <tr onmouseout="SVAE()" onmouseover="SVAE()" >
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <img src='images/SVAE.png' width="160">
+              </div>
+              <script type="text/javascript">
+                function SVAE() {
+                  document.getElementById('SVAE_image').style.opacity = "1";
+                }
+
+                function SVAE() {
+                  document.getElementById('SVAE_image').style.opacity = "0";
+                }
+                SVAE()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://github.com/octeufer/ExpVAE">
+                <papertitle>Exploration of Mode Collapse in Variational Autoencoder</papertitle>
+              </a>
+              <p>Have you ever encountered model collaspe when training VAE model?</p>
+              <p>This project explores the phenomenon of KL vanishing problem from the views of both encoder and decoder, by re-implementing Gaussian-VAE and Sigma-VAE.</p>
+            </td>
+          </tr>
+
+          <tr onmouseout="GCMC()" onmouseover="GCMC()" >
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <img src='images/neighbor.png' width="120">
+              </div>
+              <script type="text/javascript">
+                function GCMC() {
+                  document.getElementById('GCMC_image').style.opacity = "1";
+                }
+
+                function GCMC() {
+                  document.getElementById('GCMC_image').style.opacity = "0";
+                }
+                GCMC()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://github.com/octeufer/Adversarial-Balancing-based-representation-learning-for-Causal-Effect-Inference">
+                <papertitle>Graph Convolutional Neural Network For Link Prediction With Implicit Feedback</papertitle>
+              </a>
+              <p>How to predict futuer interactions between customers and products?</p>
+              <p>This project explores link prediction on heterogeneous graph with multi-modal data using graph convolutional neural networks.</p>
+            </td>
+          </tr>
+
+          <tr onmouseout="EMM()" onmouseover="EMM()" >
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <img src='images/FNRL.png' width="160", height="100">
+              </div>
+              <script type="text/javascript">
+                function EMM() {
+                  document.getElementById('EMM_image').style.opacity = "1";
+                }
+
+                function EMM() {
+                  document.getElementById('EMM_image').style.opacity = "0";
+                }
+                EMM()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://github.com/octeufer/Adversarial-Balancing-based-representation-learning-for-Causal-Effect-Inference">
+                <papertitle>Exceptional Model Mining on multi-modal data</papertitle>
+              </a>
+              <p>What your model would perform on subgroups considering spatial, temporal, text or network data?</p>
+              <p>This project proposes to explore data mining tools to discover interesting subgrouops from multi-modal data.</p>
+            </td>
+          </tr>
+          
+
+        </tbody></table>
+
+				
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+          <td style="padding:20px;width:100%;vertical-align:middle">
+            <heading>Selected Publications</heading>
+          </td>
+        </tr>
+      </tbody></table>
+
+      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+
+          
+
+        <tr onmouseout="vitchecklist()" onmouseover="vitchecklist()">
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <a href="https://arxiv.org/abs/2201.11674">
+              <papertitle>Vision Checklist: Towards Testable Error Analysis of Image Models to Help System Designers Interrogate Model Capabilities</papertitle>
+            </a>
+            <br>
+            <strong>Xin Du</strong>,
+            Benedicte Legastelois,
+            Bhargavi Ganesh,
+            Ajitha Rajan,
+            Hana Chockler,
+            Vaishak Belle,
+            Stuart Anderson,
+            Subramanian Ramamoorthy
+            <br>
+            <em>arXiv</em>, 2022
+            <br>
+            <!-- <a href="http://jonbarron.info/mipnerf360">project page</a>
+            /
+            <a href="https://arxiv.org/abs/2111.12077">arXiv</a>
+            /
+            <a href="https://youtu.be/zBSH-k9GbV4">video</a> -->
+            <p></p>
+            <!-- <p>mip-NeRF can be extended to produce realistic results on unbounded scenes.</p> -->
+          </td>
+        </tr> 
+
+        <tr onmouseout="RDRE()" onmouseover="RDRE()">
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <a href="https://arxiv.org/abs/2109.10432">
+              <papertitle>Beyond Discriminant Patterns: On the Robustness of Decision Rule Ensembles</papertitle>
+            </a>
+            <br>
+            <strong>Xin Du</strong>,
+            Subramanian Ramamoorthy,
+            Wouter Duivesteijn,
+            Jin Tian,
+            Mykola Pechenizkiy
+            <br>
+            <em>arXiv</em>, 2021
+            <br>
+            <!-- <a href="http://jonbarron.info/mipnerf360">project page</a>
+            /
+            <a href="https://arxiv.org/abs/2111.12077">arXiv</a>
+            /
+            <a href="https://youtu.be/zBSH-k9GbV4">video</a> -->
+            <p></p>
+            <!-- <p>mip-NeRF can be extended to produce realistic results on unbounded scenes.</p> -->
+          </td>
+        </tr>
+
+        <tr onmouseout="BNPM()" onmouseover="BNPM()">
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <a href="https://link.springer.com/article/10.1007/s10618-020-00674-z">
+              <papertitle>Exceptional Spatio-temporal Behavior Mining Through Bayesian Non-Parametric Modeling</papertitle>
+            </a>
+            <br>
+            <strong>Xin Du</strong>,
+            Yulong Pei,
+            Wouter Duivesteijn,
+            Mykola Pechenizkiy
+            <br>
+            <em>Journal Track of EMCL PKDD</em>, 2020
+            <br>
+            <!-- <a href="http://jonbarron.info/mipnerf360">project page</a>
+            /
+            <a href="https://arxiv.org/abs/2111.12077">arXiv</a>
+            /
+            <a href="https://youtu.be/zBSH-k9GbV4">video</a> -->
+            <p></p>
+            <!-- <p>mip-NeRF can be extended to produce realistic results on unbounded scenes.</p> -->
+          </td>
+        </tr>
+
+        <tr onmouseout="ABCEI()" onmouseover="ABCEI()">
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <a href="https://link.springer.com/article/10.1007/s10618-021-00759-3">
+              <papertitle>Adversarial Balancing-Based Representation Learning For Causal Effect Inference With Observational Data</papertitle>
+            </a>
+            <br>
+            <strong>Xin Du</strong>,
+            Lei Sun,
+            Wouter Duivesteijn,
+            Alexander Nikolaev,
+            Mykola Pechenizkiy
+            <br>
+            <em>Data Mining and Knowledge Discovery Special Issue: Mining for Health</em>, 2021
+            <br>
+            <!-- <a href="http://jonbarron.info/mipnerf360">project page</a>
+            /
+            <a href="https://arxiv.org/abs/2111.12077">arXiv</a>
+            /
+            <a href="https://youtu.be/zBSH-k9GbV4">video</a> -->
+            <p></p>
+            <!-- <p>mip-NeRF can be extended to produce realistic results on unbounded scenes.</p> -->
+          </td>
+        </tr>
+
+        <tr onmouseout="FNPL()" onmouseover="FNPL()">
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <a href="https://ojs.aaai.org/index.php/AAAI/article/view/5792">
+              <papertitle>Fairness in Network Representation by Latent Structural Heterogeneity in Observational Data</papertitle>
+            </a>
+            <br>
+            <strong>Xin Du</strong>,
+            Yulong Pei,
+            Wouter Duivesteijn,
+            Mykola Pechenizkiy
+            <br>
+            <em>AAAI Conference on Artificial Intelligence (AAAI)</em>, 2020
+            <br>
+            <!-- <a href="http://jonbarron.info/mipnerf360">project page</a>
+            /
+            <a href="https://arxiv.org/abs/2111.12077">arXiv</a>
+            /
+            <a href="https://youtu.be/zBSH-k9GbV4">video</a> -->
+            <p></p>
+            <!-- <p>mip-NeRF can be extended to produce realistic results on unbounded scenes.</p> -->
+          </td>
+        </tr>
+
+
+
+      </tbody></table>
+
+
+        <!-- <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
+          <tr>
+            <td>
+              <heading>Misc</heading>
+            </td>
+          </tr>
+        </tbody></table>
+        <table width="100%" align="center" border="0" cellpadding="20"><tbody> -->
+					
+          <!-- <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle"><img src="images/cvf.jpg"></td>
+            <td width="75%" valign="center">
+              <a href="https://cvpr2022.thecvf.com/area-chairs">Area Chair, CVPR 2022</a>
+              <br>
+              <a href="http://cvpr2021.thecvf.com/area-chairs">Area Chair & Longuet-Higgins Award Committee Member, CVPR 2021</a>
+              <br>
+              <a href="http://cvpr2019.thecvf.com/area_chairs">Area Chair, CVPR 2019</a>
+              <br>
+              <a href="http://cvpr2018.thecvf.com/organizers/area_chairs">Area Chair, CVPR 2018</a>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <img src="images/cs188.jpg" alt="cs188">
+            </td>
+            <td width="75%" valign="center">
+              <a href="http://inst.eecs.berkeley.edu/~cs188/sp11/announcements.html">Graduate Student Instructor, CS188 Spring 2011</a>
+              <br>
+              <a href="http://inst.eecs.berkeley.edu/~cs188/fa10/announcements.html">Graduate Student Instructor, CS188 Fall 2010</a>
+              <br>
+              <a href="http://aima.cs.berkeley.edu/">Figures, "Artificial Intelligence: A Modern Approach", 3rd Edition</a>
+            </td>
+          </tr>
+          <tr>
+            <td align="center" style="padding:20px;width:25%;vertical-align:middle">
+							<heading>Basically <br> Blog Posts</heading>
+            </td>
+            <td width="75%" valign="middle">
+              <a href="https://arxiv.org/abs/2112.11687">Squareplus: A Softplus-Like Algebraic Rectifier</a>
+              <br>
+              <a href="https://arxiv.org/abs/2010.09714">A Convenient Generalization of Schlick's Bias and Gain Functions</a>
+              <br>
+              <a href="https://arxiv.org/abs/1704.07483">Continuously Differentiable Exponential Linear Units</a>
+            </td>
+          </tr> -->
+					
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>
