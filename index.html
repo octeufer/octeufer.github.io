@@ -57,15 +57,75 @@
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr>
-          <td style="padding:20px;width:100%;vertical-align:middle">
-            <heading>Projects</heading>
-          </td>
-        </tr>
-      </tbody></table>
+            <td style="padding:20px;width:100%;vertical-align:middle">
+              <heading>Recent News</heading>
+            </td>
+          </tr>
+        </tbody></table>
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
-          
+          <tr onmouseout="velocity()" onmouseover="velocity()" >
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <img src='articles/images/motion_car.png' width="180" height="180">
+              </div>
+              <script type="text/javascript">
+                function velocity() {
+                  document.getElementById('velocity_image').style.opacity = "1";
+                }
+
+                function velocity() {
+                  document.getElementById('velocity_image').style.opacity = "0";
+                }
+                velocity()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="articles/velocity.html">
+                <papertitle>Personal Blog: Motion and Velocity</papertitle>
+              </a>
+              <p>Thoughts about motion and velocity from a recent reading.</p>
+            </td>
+          </tr> 
+
+          <!-- <tr onmouseout="vitchecklist()" onmouseover="vitchecklist()" >
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <div class="one">
+                <img src='images/framework.png' width="180">
+              </div>
+              <script type="text/javascript">
+                function vitchecklist() {
+                  document.getElementById('vitchecklist_image').style.opacity = "1";
+                }
+
+                function vitchecklist() {
+                  document.getElementById('vitchecklist_image').style.opacity = "0";
+                }
+                vitchecklist()
+              </script>
+            </td>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <a href="https://github.com/octeufer/VisionChecklist">
+                <papertitle>Vision Checklist: Towards Testable Error Analysis of Image Models to Help System Designers Interrogate Model Capabilities</papertitle>
+              </a>
+              <p>How much can we trust the predictions of Image recognition model backed by Transformers and Resnet?</p>
+              <p>This project proposes a set of perturbation operations that can be applied on the underlying data to generate test samples of different types. The perturbations reflect potential changes in operating environments, and interrogate various properties ranging from the strictly quantitative to more qualitative.</p>
+            </td>
+          </tr>  -->
+
+        </tbody></table>
+
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:20px;width:100%;vertical-align:middle">
+              <heading>Projects</heading>
+            </td>
+          </tr>
+        </tbody></table>
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
           <tr onmouseout="vitchecklist()" onmouseover="vitchecklist()" >
             <td style="padding:20px;width:25%;vertical-align:middle">
@@ -216,22 +276,19 @@
               <p>This project proposes to explore data mining tools to discover interesting subgroups from multi-modal data.</p>
             </td>
           </tr>
-          
 
         </tbody></table>
 
 				
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr>
-          <td style="padding:20px;width:100%;vertical-align:middle">
-            <heading>Selected Publications</heading>
-          </td>
-        </tr>
-      </tbody></table>
+            <td style="padding:20px;width:100%;vertical-align:middle">
+              <heading>Selected Publications</heading>
+            </td>
+          </tr>
+        </tbody></table>
 
-      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-
-          
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
         <tr onmouseout="vitchecklist()" onmouseover="vitchecklist()">
           <td style="padding:20px;width:75%;vertical-align:middle">
@@ -355,8 +412,7 @@
         </tr>
 
 
-
-      </tbody></table>
+        </tbody></table>
 
 
         <!-- <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>

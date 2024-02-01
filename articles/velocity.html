@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <!-- <title>Narratives About The Velocity</title> -->
+  
+  <meta name="author" content="Xin Du">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+  <script>
+    MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+  </script>
+
+  <link rel="stylesheet" type="text/css" href="astylesheet.css">
+  <link rel="icon" type="image/png" href="images/seal_icon.png">
+</head>
+
+<!-- <a href="https://ai.google/research">Google Research</a> -->
+
+<body>
+  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    <tr style="padding:0px">
+      <td style="padding:0px">
+
+      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <tr>
+          <td style="padding:20px;width:100%;vertical-align:middle">
+            <h1>Motion and Velocity</h1>
+          </td>
+        </tr>
+        <tr>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <!-- <h3>Introduction</h3> -->
+              <p>In Feyman's Lectures on Physics Volume I, Chapter 8, he introduces how to represent and estimate velocity, which is used to model the motion of objects. The Chapter starts with two groups of observations, the measure of distances with regard to the time variable. When I was reading this chapter, some thoughts linked to the machine learning methods that drived me to wrote this blog post.</p>
+            </td>
+        </tr> 
+        <tr>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <img src='images/motion_car.png'
+                 title = "motion car"
+                 height = "360"
+                 width = "360" />
+            <img src='images/motion_ball.png'
+                 title = "motion ball"
+                 height = "360"
+                 width = "360" />
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:20px;width:75%,vertical-align:middle">
+            <p>
+              There are two groups of data, where \(8-1\) represents a complex system of car motion, and \(8-2\) represents a simpler system of ball falling. And we know that for \(8-2\) the system can be written with an equation \(s = 16t^2\).
+            </p>
+            <p>
+              The question we would like to answer is that representation of the system in \(8-1\), which we can symbolize it as \(s = f(t)\).
+            </p>
+            <p>
+              In order to represent \(f(t)\) accurately we need to include another variable known as speed \(V\), which is the average distance in a short time. From system in \(8-2\) we can represent it as:
+              $$V = \frac{s}{\epsilon} = \frac{(16(t_0 + \epsilon)^2 - 16t_0^2)}{\epsilon} = 32t_0 + 16{\epsilon} = 32t_0$$.
+            </p>
+            <p>
+              Then we can approximate the distance s further with integral equation as:
+              $$s = \sum_{t}V * \Delta t = \sum_{t} 32t \Delta t$$,
+            </p>
+            <p>
+              The system can be empirically validated as:
+            </p>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <img src='images/falling_ball_val.png'
+                 title = "validation of falling ball motion"
+                 height = "300"
+                 width = "200" />
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:20px;width:75%,vertical-align:middle">
+            <p>
+              Where the velocity calculated by the equation can be used to estimate the distance correctly. This shows that distance and its derivative can be represented by a form of polynomial. And this process is invertible.           
+            </p>
+            <p>
+              Now we would like to understand the system of \(8-1\), we can write the equation as: \(s=At^3+Bt+C\), the same form of polynomials like in \(8-2\). Then we can infer the coefficients with the data in \(8-1\).
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <img src='images/curve_fit_nm.png'
+                 title = "curve fit newton method"
+                 height = "300"
+                 width = "300" />
+            <img src='images/losslog_nm.png'
+                 title = "loss log newton method"
+                 height = "300"
+                 width = "300" />
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:20px;width:75%,vertical-align:middle">
+            <p>
+              The observations of 10 data points can be used to approximate the coefficients of the polynomial with Newtonian methods, as shown in the above Figure. I did not go deeper in this direction for the specific form of the representations. Instead, I built a one-layer neural network to fit the data points.
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <img src='images/curve_fit_nn.png'
+                 title = "curve fit neural network"
+                 height = "300"
+                 width = "300" />
+            <img src='images/losslog_nn.png'
+                 title = "loss log neural network"
+                 height = "300"
+                 width = "300" />
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:20px;width:75%,vertical-align:middle">
+            <p>
+              The neural network model has shown better capability for the non-linearity in the data. However, when infering the distance with the derived velocity function, there are still large gaps.
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <img src='images/car_val.png'
+                 title = "validation of car motion"
+                 height = "300"
+                 width = "300" />
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:20px;width:75%,vertical-align:middle">
+            <p>
+              Hence, I return to the previous method, to build a polynomial function for the velocity and approximate the distance. The results are shown in the below figure, where the function of velocity learned is \(V=43.44∗t^2+1754.45\). This is quite similar to the ground truth velocity in the data.
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <img src='images/curve_fit_v_nm.png'
+                 title = "velocity for curve fit"
+                 height = "300"
+                 width = "300" />
+            <img src='images/losslog_v_nm.png'
+                 title = "loss of velocity for curve fit"
+                 height = "300"
+                 width = "300" />
+          </td>
+        </tr>
+
+      </tbody></table>
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>
