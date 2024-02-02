@@ -58,7 +58,7 @@
             </p>
             <p>
               In order to represent \(f(t)\) accurately we need to include another variable known as speed \(V\), which is the average distance in a short time. From system in \(8-2\) we can represent it as:
-              $$V = \frac{s}{\epsilon} = \frac{(16(t_0 + \epsilon)^2 - 16t_0^2)}{\epsilon} = 32t_0 + 16{\epsilon} = 32t_0$$.
+              $$V = \frac{s}{\epsilon} = \frac{(16(t_0 + \epsilon)^2 - 16t_0^2)}{\epsilon} = 32t_0 + 16{\epsilon} \approx 32t_0$$.
             </p>
             <p>
               Then we can approximate the distance s further with integral equation as:
@@ -142,7 +142,7 @@
         <tr>
           <td style="padding:20px;width:75%,vertical-align:middle">
             <p>
-              Hence, I return to the previous method, to build a polynomial function for the velocity and approximate the distance. The results are shown in the below figure, where the function of velocity learned is \(V=43.44∗t^2+1754.45\). This is quite similar to the ground truth velocity in the data. Please note that in all the experiments, the first data point has been hold-out to validate the reliability of the model.
+              Hence, I return to the previous method, to build a polynomial function for the velocity and approximate the distance. The results are shown in the below figure, where the velocity function learned is \(V=43.44∗t^2+1754.45\). This is quite similar to the ground truth velocity in the data. Please note that in all the experiments, the first data point has been hold-out to validate the reliability of the model.
             </p>
           </td>
         </tr>
