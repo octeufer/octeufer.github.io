@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <!-- <title>Narratives About The Velocity</title> -->
+  
+  <meta name="author" content="Xin Du">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+  <script>
+    MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+  });
+  </script>
+
+  <link rel="stylesheet" type="text/css" href="astylesheet.css">
+  <link rel="icon" type="image/png" href="images/seal_icon.png">
+</head>
+
+<!-- <a href="https://ai.google/research">Google Research</a> -->
+
+<body>
+  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    <tr style="padding:0px">
+      <td style="padding:0px">
+
+      <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        <tr>
+          <td style="padding:20px;width:100%;vertical-align:middle">
+            <h1>Basketball, let the data tell</h1>
+          </td>
+        </tr>
+        <tr>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+              <!-- <h3>Introduction</h3> -->
+              <p>Like all the great sport games that are invented by the human, basketball is full of passion, prides, competition and prevalence. Recently it is just the season of playoffs for all the sports near the summer. Everthing is on the edge of ending for a long period of rest in the summer vocation, as well as the peak of competition for the final running of the triumphs. However, it has been a long time since I looked into the basketball matches. The data driven nature comes up with the idea to understand more about what`s going on in the games.</p>
+            </td>
+        </tr> 
+        <tr>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <img src='images/basketball-team_stats.png'
+                 title = "Team Stats Average Per Game"
+                 height = "300"
+                 width = "800" />
+            <!-- <img src='images/motion_ball.png'
+                 title = "motion ball"
+                 height = "360"
+                 width = "360" /> -->
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <p>
+              One significant nature of basketball is the precise useage of time to seconds, which strives the statistics of in-match data, like number of field goal attempts, number of rebounds. These data reveals the on-going status of the games and the consequences on final results. On machine learning competition platform Kaggle, there are a series of competitions called "March Machine Learning Mania", which requires to use the data of US colleage basketball tournament (NCAA) for prediction tasks. This series of competitions are quite interesting, as it shows how data science could work in real-world with long term statistic supports.
+            </p>
+            <p>
+              First let`s look at the data that we have about the matches of NCAA. As shown in the above Figure, for each game, along side with winner scores and loser scores, both offensive and defensive data are recorded. As a first tryout, I built a Linear model to predict the scores for each match.
+            </p>
+          </td>
+        </tr>
+
+          <tr>
+            <td style="padding:20px;width:75%;horizontal-align:middle">
+              <img src = "images/basketball-scoreshap.png"
+                   title = "Shapely value for score regression model"
+                   height = "360"
+                   width = "360" />
+              <img src = "images/basketball-winshap.png"
+                   title = "Shapely value for win / lose prediction model"
+                   height = "360"
+                   width = "360" />
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:20px;width:75%;vertical-align:middle">
+            <p>
+              To evaluate the soundness of the regression model that I built, the coefficient of determination measurement is used, where the square error is computed in the measure: \(L = 1 - \frac{u}{v}\), \(u = \sum_{i} (Y_i - \hat{Y}_i)^2\), \(u = \sum_{i} (Y_i - \mu_Y)^2\).
+            </p>
+            <p>
+              The final score for this model on test dataset is reported as \(0.9987\). In the left-above figure, shapley value against each input feature are calculated, where we can see that 'Field Goal Made', 'Free Throw Made', and 'Field Goal 3-Points Made' play as the most important feature for the outcome. 
+            </p>
+        
+            <p>
+              While promising, this result does not demonstrate sufficient information to guide the trends of the games, cause it is the common sense that those three index are the composites of the scores. Then I built a model to predict the win or lose of each game with those features. The results show that this model has \(85\) percent accuracy when predicting the matching results on test data.           
+            </p>
+            <p>
+              In the right-above figure, shapley value against each feature are demonstrated. Unlike the score prediction, it shows that 'Defense Rebound' has positive effects on the winning of each game, and 'Field Goal Attempt' has negative effects on the winning of each game. This delivers a lot more information than the previous model, as it demonstrates more diverse results about the effects of different statistics on the match results.
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+            <td style="padding:20px;width:75%;horizontal-align:middle">
+              <img src = "images/basketball-diffshap.png"
+                   title = "Shapely value for score difference regression model"
+                   height = "360"
+                   width = "360" />
+              <img src = "images/basketball-diff_error.png"
+                   title = "error of socre differnce prediction"
+                   height = "360"
+                   width = "360" />
+            </td>
+          </tr>
+
+        <tr>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <p>
+              From the results we get so far, as a non-professional basketball coach, with data driven decision making guidance to manage a team, I would be confident to tell my players before each match: 'Sieging the defense rebound! Shooting only when real chances come! And lower unnecessary fouls!' 
+            </p>
+            <p>
+              Now it might happen that the team needs more information on how to improve the scores against the opponents, so that the winning rates can be precisely forecasted. Follows this objective, I built another model that predicts the score differences in each match. It achieves the coefficient of determination \(0.7692\), a pretty good result even though it is a bit worse than the previous task. The error modes in right-above figure show that the prediction errors are limited to around 10 points.
+            </p>
+            <p>
+              The shapley value in the left-above figure shows similar results as the win / lose prediction. Now another question comes up, what if the team increases the `Field Goal Attempts' or 'Field Goal 3-points Attempts'? To answer this question, causal inference is required.
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <img src='images/basketball-htest_fg32fg2.png'
+                 title = "Hypothesis Test for Field Goal 3-points Attempts"
+                 height = "500"
+                 width = "600" />
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:20px;width:75%,vertical-align:middle">
+            <p>
+              Answering causal questions require a causal model that allows for querying responses from different causal variable inputs. Here the aim is to discover such causal insights from the historical data, where the causal relations are undermined in the observations. Does `Field Goal 3-points Attempts' affect the 'Field Goal Made' or the other way around? Properly discovering the answer for this question from the historical data could give insightful guidance for the matches. For instance, understanding the how the trends of 3-points tactics become more and more popular in the league. 
+            </p>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <img src='images/basketball-htest_fg22fg3.png'
+                 title = "Hypothesis Test for Field Goal Attempts"
+                 height = "500"
+                 width = "600" />
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <p>
+              Following this direction I built a regression model between the two variables and conducted statistical tests for both directions. The results from the above two figures show that the independence score falls into the Null distribution in the direction of `FG3A -> FGM' but not `FG2A -> FG3M' in the eight randomly sampled populational groups. Now as a non-professional coach I can be confidenct in some certain degree to tell my players that 'Let`s make more attempts of 3-point field goals!'
+            </p>
+            <p>
+              Basketball is a great sport game, so is data science, as a great major. However, as all of the other great sports, the most important nature of basketball is the coincidence, where the unknown interventions on the data generating process are always hold by the players on the ground, and determined by the decisions in the milliseconds. This mighted not ever be able to be answered by the data science tools that we currently have.
+            </p>
+          </td>
+        </tr>
+
+      </tbody></table>
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>

@@ -65,6 +65,30 @@
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
+        <tr onmouseout="basketball()" onmouseover="basketball()" >
+          <td style="padding:20px;width:25%;vertical-align:middle">
+            <div class="one">
+              <img src='articles/images/basketball-team_stats.png' width="180" height="180">
+            </div>
+            <script type="text/javascript">
+              function basketball() {
+                document.getElementById('basketball_image').style.opacity = "1";
+              }
+
+              function basketball() {
+                document.getElementById('basketball_image').style.opacity = "0";
+              }
+              basketball()
+            </script>
+          </td>
+          <td style="padding:20px;width:75%;vertical-align:middle">
+            <a href="articles/basketball.html">
+              <papertitle>Personal Blog: Basketball, let the data tell</papertitle>
+            </a>
+            <p>Thoughts about basketball and data science.</p>
+          </td>
+        </tr> 
+
         <tr onmouseout="velocity()" onmouseover="velocity()" >
           <td style="padding:20px;width:25%;vertical-align:middle">
             <div class="one">
@@ -88,32 +112,6 @@
             <p>Thoughts about motion and velocity from a recent reading.</p>
           </td>
         </tr> 
-
-          <!-- <tr onmouseout="vitchecklist()" onmouseover="vitchecklist()" >
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <img src='images/framework.png' width="180">
-              </div>
-              <script type="text/javascript">
-                function vitchecklist() {
-                  document.getElementById('vitchecklist_image').style.opacity = "1";
-                }
-
-                function vitchecklist() {
-                  document.getElementById('vitchecklist_image').style.opacity = "0";
-                }
-                vitchecklist()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://github.com/octeufer/VisionChecklist">
-                <papertitle>Vision Checklist: Towards Testable Error Analysis of Image Models to Help System Designers Interrogate Model Capabilities</papertitle>
-              </a>
-              <p>How much can we trust the predictions of Image recognition model backed by Transformers and Resnet?</p>
-              <p>This project proposes a set of perturbation operations that can be applied on the underlying data to generate test samples of different types. The perturbations reflect potential changes in operating environments, and interrogate various properties ranging from the strictly quantitative to more qualitative.</p>
-            </td>
-          </tr>  -->
-
         </tbody></table>
 
 
